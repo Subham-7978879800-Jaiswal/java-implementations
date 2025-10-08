@@ -1,4 +1,5 @@
 package Collections;
+
 import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Stack;
@@ -93,14 +94,13 @@ class StackExample {
         // IDEA Stacks are synchronized
         // Two Thread will change same stack at same time still no Data Corruption
 
-
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
                 studentStack.push(new Student(i));
             }
         });
 
-        Thread t2 =  new Thread(() -> {
+        Thread t2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
                 studentStack.push(new Student(i));
             }

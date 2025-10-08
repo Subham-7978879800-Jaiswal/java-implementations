@@ -1,4 +1,5 @@
 package Collections;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -28,8 +29,6 @@ class Student {
 
 }
 
-
-
 class StudentC implements Comparable<StudentC> {
     int id;
 
@@ -37,7 +36,7 @@ class StudentC implements Comparable<StudentC> {
     public int compareTo(StudentC s) {
         return this.id - s.id; // NOTE -> Ascending Order
         // return s.id - this.id; // NOTE -> Descending Order
-    }   
+    }
 
     StudentC(int id) {
         this.id = id;
@@ -78,23 +77,21 @@ public class CollectionsClass {
 
         Collections.sort(al); // NOTE -> Sorts the arraylist
         System.out.println(al); // NOTE -> [1, 2, 23, 29, 42]
-        Collections.sort(al,Collections.reverseOrder()); // NOTE -> Sorts in reverse order
+        Collections.sort(al, Collections.reverseOrder()); // NOTE -> Sorts in reverse order
         System.out.println(al); // NOTE -> [42, 29, 23, 2, 1]
 
         ArrayList<Student> students = new ArrayList<>();
         students.add(new Student(1));
         students.add(new Student(3));
         students.add(new Student(2));
-        Collections.sort(students,(s1,s2) -> s2.id - s1.id); // NOTE -> Sorts using comparator
+        Collections.sort(students, (s1, s2) -> s2.id - s1.id); // NOTE -> Sorts using comparator
         System.out.println(students);
 
-
-
-         ArrayList<StudentC> studentsC = new ArrayList<>();
+        ArrayList<StudentC> studentsC = new ArrayList<>();
         studentsC.add(new StudentC(1));
         studentsC.add(new StudentC(3));
         studentsC.add(new StudentC(2));
-         Collections.sort(studentsC,(s1,s2) -> s2.id - s1.id  ); // NOTE -> Sorts using comparator
+        Collections.sort(studentsC, (s1, s2) -> s2.id - s1.id); // NOTE -> Sorts using comparator
         System.out.println(studentsC);
     }
 }
