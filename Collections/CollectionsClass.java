@@ -48,9 +48,13 @@ class StudentC implements Comparable<StudentC> {
             return true;
         if (obj == null || getClass() != obj.getClass())
             return false;
-        Student student = (Student) obj;
+        StudentC student = (StudentC) obj;
         return id == student.id;
+    }
 
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
     }
 
     public String toString() {
@@ -60,7 +64,6 @@ class StudentC implements Comparable<StudentC> {
     }
 
 }
-
 public class CollectionsClass {
     public static void main(String args[]) {
         System.out.println("Collections Class");
