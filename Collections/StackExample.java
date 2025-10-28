@@ -4,10 +4,10 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Stack;
 
-class Student {
+class StudentR {
     int id;
 
-    Student(int id) {
+    StudentR(int id) {
         this.id = id;
     }
 
@@ -17,7 +17,7 @@ class Student {
             return true;
         if (obj == null || getClass() != obj.getClass())
             return false;
-        Student student = (Student) obj;
+        StudentR student = (StudentR) obj;
         return id == student.id;
 
     }
@@ -84,10 +84,10 @@ class StackExample {
         // IDEA for Proper Iteration do reverse order
 
         // IDEA = Adding object into stack and finding it using search method
-        Stack<Student> studentStack = new Stack<>();
-        studentStack.push(new Student(1));
-        studentStack.push(new Student(2));
-        System.out.println(studentStack.search(new Student(1))); // NOTE -> 2
+        Stack<StudentR> studentStack = new Stack<>();
+        studentStack.push(new StudentR(1));
+        studentStack.push(new StudentR(2));
+        System.out.println(studentStack.search(new StudentR(1))); // NOTE -> 2
         // if remove method removed from Student class then it will return -1 as it will
         // not find the object
 
@@ -96,13 +96,13 @@ class StackExample {
 
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                studentStack.push(new Student(i));
+                studentStack.push(new StudentR(i));
             }
         });
 
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                studentStack.push(new Student(i));
+                studentStack.push(new StudentR(i));
             }
         });
 
