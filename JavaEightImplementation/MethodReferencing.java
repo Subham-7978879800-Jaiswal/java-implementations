@@ -21,7 +21,7 @@ public class MethodReferencing {
                         System.out.println("THREAD");
                 });
 
-                Thread t11 = new Thread(Printer::new);
+                Thread t11 = new Thread(new Printer()::print);
                 Thread t12 = new Thread(Printer::new);
                 Thread t13 = new Thread(Printer::printX);
 
