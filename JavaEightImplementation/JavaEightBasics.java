@@ -1,5 +1,5 @@
 
-// IDEA -> Interface with Default and static method
+// IDEA -> Interface with Default and Abstract method
 @FunctionalInterface
 interface A {
     default void getMoney() {
@@ -9,7 +9,7 @@ interface A {
     void a();
 }
 
-// IDEA -> Interface with Default and static method
+// IDEA -> Interface with Default and Abstract method
 @FunctionalInterface
 interface B {
     default void getMoney() {
@@ -21,7 +21,7 @@ interface B {
 
 class JavaEightBasics implements A, B {
 
-    // IDEA -> Static method implementation
+    // IDEA -> Abstract method implementation
     public void a() {
         System.out.println("JavaEightBasics");
     }
